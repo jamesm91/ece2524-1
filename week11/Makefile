@@ -14,6 +14,7 @@ main: ${OBJ}
 	  sed -e 's/#.*//' -e 's/^[^:]*: *//' -e 's/ *\\$$//' \
 	 	  -e '/^$$/ d' -e 's/$$/ :/' < $*.P >> $*.d; \
 	  rm -f $*.P
+	  tar -cvpf archive.tar.gz ${SRC}
 
 clean:
 	-rm *.o *.d *~
